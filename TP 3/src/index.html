@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Reading Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-r from-purple-300 via-pink-300 to-red-300 text-gray-900"
+  >
+    <div class="max-w-5xl mx-auto p-8">
+      <h1 class="text-5xl font-bold text-center mb-10 text-white">
+        Book Tracker
+      </h1>
+
+      <!-- Book Form Section -->
+      <form
+        id="book-form"
+        class="bg-white p-8 rounded-lg shadow-lg space-y-6 mb-12"
+      >
+        <h2 class="text-2xl font-semibold text-gray-700 mb-6 text-center">
+          Add a New Book
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="title" class="block text-sm font-medium text-gray-600"
+              >Title</label
+            >
+            <input
+              type="text"
+              id="title"
+              placeholder="Enter the book title"
+              class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:border-purple-500 focus:ring focus:ring-purple-300"
+            />
+          </div>
+          <div>
+            <label for="author" class="block text-sm font-medium text-gray-600"
+              >Author</label
+            >
+            <input
+              type="text"
+              id="author"
+              placeholder="Enter the author's name"
+              class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:border-purple-500 focus:ring focus:ring-purple-300"
+            />
+          </div>
+          <div>
+            <label for="pages" class="block text-sm font-medium text-gray-600"
+              >Pages</label
+            >
+            <input
+              type="number"
+              id="pages"
+              placeholder="Total pages"
+              class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:border-purple-500 focus:ring focus:ring-purple-300"
+            />
+          </div>
+          <div>
+            <label for="status" class="block text-sm font-medium text-gray-600"
+              >Status</label
+            >
+            <select
+              id="status"
+              class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:border-purple-500 focus:ring focus:ring-purple-300"
+            >
+              <option>Read</option>
+              <option>Re-read</option>
+              <option>DNF</option>
+              <option>Currently reading</option>
+              <option>Returned Unread</option>
+              <option>Want to read</option>
+            </select>
+          </div>
+          <div>
+            <label for="price" class="block text-sm font-medium text-gray-600"
+              >Price ($)</label
+            >
+            <input
+              type="number"
+              id="price"
+              placeholder="Price in dollars"
+              class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:border-purple-500 focus:ring focus:ring-purple-300"
+            />
+          </div>
+          <div>
+            <label
+              for="pagesRead"
+              class="block text-sm font-medium text-gray-600"
+              >Pages Read</label
+            >
+            <input
+              type="number"
+              id="pagesRead"
+              placeholder="Pages read so far"
+              class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:border-purple-500 focus:ring focus:ring-purple-300"
+            />
+          </div>
+          <div>
+            <label for="format" class="block text-sm font-medium text-gray-600"
+              >Format</label
+            >
+            <select
+              id="format"
+              class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:border-purple-500 focus:ring focus:ring-purple-300"
+            >
+              <option>Print</option>
+              <option>PDF</option>
+              <option>Ebook</option>
+              <option>AudioBook</option>
+            </select>
+          </div>
+          <div>
+            <label
+              for="suggestedBy"
+              class="block text-sm font-medium text-gray-600"
+              >Suggested By</label
+            >
+            <input
+              type="text"
+              id="suggestedBy"
+              placeholder="Suggested by"
+              class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:border-purple-500 focus:ring focus:ring-purple-300"
+            />
+          </div>
+        </div>
+
+        <div class="text-center mt-6">
+          <button
+            type="submit"
+            class="px-6 py-3 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 transition duration-300"
+          >
+            Add Book
+          </button>
+        </div>
+      </form>
+
+      <!-- Book List Section -->
+      <div id="book-list" class="space-y-8">
+        <h2 class="text-3xl font-semibold text-center text-gray-700 mb-4">
+          Book List
+        </h2>
+        <!-- Display books as cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Example Book Card -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Book Title</h3>
+            <p class="text-gray-600">
+              Author: <span class="text-gray-800">Author Name</span>
+            </p>
+            <p class="text-gray-600">
+              Pages: <span class="text-gray-800">350</span>
+            </p>
+            <p class="text-gray-600">
+              Status: <span class="text-gray-800">Currently Reading</span>
+            </p>
+            <p class="text-gray-600">
+              Format: <span class="text-gray-800">Print</span>
+            </p>
+            <p class="text-gray-600">
+              Suggested By: <span class="text-gray-800">John Doe</span>
+            </p>
+          </div>
+          <!-- Additional books would display here dynamically via JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TypeScript script for functionality -->
+    <script src="./script.js"></script>
+  </body>
+</html>
